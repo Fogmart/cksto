@@ -31,6 +31,7 @@ class ControllerCheckoutRegister extends Controller {
 
 		$data['button_continue'] = $this->language->get('button_continue');
 		$data['button_upload'] = $this->language->get('button_upload');
+        $data['button_confirmation']= $this->language->get('button_confirmation');
 
 		$data['customer_groups'] = array();
 
@@ -156,15 +157,19 @@ class ControllerCheckoutRegister extends Controller {
 
 			if ((utf8_strlen($this->request->post['telephone']) < 3) || (utf8_strlen($this->request->post['telephone']) > 32)) {
 				$json['error']['telephone'] = $this->language->get('error_telephone');
-			}
+			} else {
+                if (trim($this->request->post['smscode']) != $this->session->data['sms']) {
+                    $json['error']['telephone'] = $this->language->get('error_smscode');
+                }
+            }
 
 			if ((utf8_strlen(trim($this->request->post['address_1'])) < 3) || (utf8_strlen(trim($this->request->post['address_1'])) > 128)) {
 				$json['error']['address_1'] = $this->language->get('error_address_1');
 			}
-
-			if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
-				$json['error']['city'] = $this->language->get('error_city');
-			}
+//
+//			if ((utf8_strlen(trim($this->request->post['city'])) < 2) || (utf8_strlen(trim($this->request->post['city'])) > 128)) {
+//				$json['error']['city'] = $this->language->get('error_city');
+//			}
 
 			$this->load->model('localisation/country');
 

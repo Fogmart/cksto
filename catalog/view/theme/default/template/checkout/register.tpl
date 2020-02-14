@@ -34,8 +34,16 @@
       </div>
       <div class="form-group required">
         <label class="control-label" for="input-payment-telephone"><?php echo $entry_telephone; ?></label>
-        <input type="text" name="telephone" value="" placeholder="<?php echo $entry_telephone; ?>" id="input-payment-telephone" class="form-control" />
+        <input type="text" name="telephone" id="input-payment-telephone" value="" placeholder="<?php echo $entry_telephone; ?>" id="input-payment-telephone" class="form-control" />
       </div>
+      <div class="form-group required">
+        <label class="control-label" for="input-payment-telephone"><?php echo $text_sms; ?></label>
+        <button class="addToCart btn-button" type="button" data-toggle="tooltip" title=""
+                onclick="chkPhone()" id="btn-chkPhone" data-original-title="<?php echo $button_confirmation?>">
+        </button>
+        <input type="text" name="smscode" id="smscode" value="" style="display: none" class="form-control" />
+      </div>
+
       <div class="form-group">
         <label class="control-label" for="input-payment-fax"><?php echo $entry_fax; ?></label>
         <input type="text" name="fax" value="" placeholder="<?php echo $entry_fax; ?>" id="input-payment-fax" class="form-control" />
@@ -160,10 +168,6 @@
       <div class="form-group">
         <label class="control-label" for="input-payment-address-2"><?php echo $entry_address_2; ?></label>
         <input type="text" name="address_2" value="" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
-      </div>
-      <div class="form-group required">
-        <label class="control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
-        <input type="text" name="city" value="" placeholder="<?php echo $entry_city; ?>" id="input-payment-city" class="form-control" />
       </div>
       <div class="form-group required">
         <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
@@ -486,4 +490,16 @@ $('#collapse-payment-address select[name=\'country_id\']').on('change', function
 });
 
 $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+
+  function chkPhone(){
+
+    var tel=document.getElementById("input-payment-telephone").value;
+    if (tel == "") return
+    $.post("index.php?route=account/register/cnfrmphone",
+            {phone: tel}, function (data) {
+              $("#smscode").show()
+              $("#btn-chkPhone").hide()
+            }
+    );
+  }
 //--></script>

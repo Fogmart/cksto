@@ -78,7 +78,7 @@
 <div id="mydiv" style="display:none;">
 <span style="float:left; margin-right:25px;"> <?php echo $text_sms; ?> </span>
 
- <input type="text" value="" id="quantity" style="margin-top: 5px; height: 35px;width: 100px;" >
+ <input type="text" value="" id="quantity" name="smscode" style="margin-top: 5px; height: 35px;width: 100px;" >
     <span id="codemsg"></span>
  <!--<input type="button" value="Заказать" id="zakazat" onclick="someFunc()">-->
 
@@ -322,7 +322,7 @@
               <?php } ?>
             </div>
           </div>-->
-          <div class="form-group required">
+         <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
             <div class="col-sm-10">
               <select name="country_id" id="input-country" class="form-control">
@@ -350,15 +350,7 @@
               <?php } ?>
             </div>
           </div>
-<div class="form-group required">
-            <label class="col-sm-2 control-label" for="input-city"><?php echo $entry_city; ?></label>
-            <div class="col-sm-10">
-              <input type="text" name="city" value="<?php echo $city; ?>" placeholder="<?php echo $entry_city; ?>" id="input-city" class="form-control" />
-              <?php if ($error_city) { ?>
-              <div class="text-danger"><?php echo $error_city; ?></div>
-              <?php } ?>
-            </div>
-          </div>
+
 
           <?php foreach ($custom_fields as $custom_field) { ?>
           <?php if ($custom_field['location'] == 'address') { ?>
