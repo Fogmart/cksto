@@ -1,0 +1,263 @@
+/*============FOOTER DEFAULT==================*/
+footer{
+   .footer-container{
+      position: relative;
+      background: url("#{$imgPath}bg-footer.jpg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      color: #fff;
+      #yt-totop{
+        background-color: $background1;
+        color: #fff;
+        height: 50px;
+        width: 50px;
+        line-height: 44px;
+        position: absolute;
+        text-align: center;
+        z-index: 800;
+        top: -25px;
+        #{$left}: 50%;
+        margin-#{$left}: -25px;
+        font-size: 20px;
+        span{
+          display: inline-block;
+          font-size: 12px;
+          min-width: 76px;
+          text-transform: uppercase;
+          margin-#{$left}: -11px;
+          top: 3px;
+          position: relative;
+        }
+        &:hover{
+          @include transition(all 0.3s ease-in-out);
+          background: red;
+        }
+    }
+    /*TITLE FOOTER*/
+    .footer-title{
+        position: relative;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding-top: 38px;
+        font-weight: bold;
+        display: inline-block;
+        &:after {
+          position: absolute;
+          content: "";
+          background-color: $background1;
+          bottom: -20px;
+          #{$left}: 0;
+          width: 40px;
+          height: 3px;
+      }
+    }
+  }
+  .footer-top{
+    .socials-wrap{
+      @media (min-width:992px){ 
+            .li-social.linkedin-social{
+              clear: both;
+            }
+          }
+          ul{
+            .li-social{
+              float: $left;
+            }
+            .fa{
+              background-color: #333333;
+              margin: side-values(0 10px 10px 0);
+              font-size: 15px;
+              width: 40px;
+              height: 40px;
+              text-align: center;
+              padding-top: 13px;
+              color: #898989;
+              
+              &:hover{
+                color:#fff;
+                background: $background1;
+                @include transition(all 0.2s ease-in-out);
+              }
+            }
+            .name-social{
+              display: none;
+            }
+          }
+      }
+  }
+  .footer-center{
+      position: relative;
+    
+    ul.menu li{
+      line-height: 25px;
+      @include transition(all 0.3s ease-in-out);
+      &:before{
+          content: '\f0da';
+          display: inline-block;
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          font-synthesis: weight style;
+          font-stretch: normal;
+          font-size-adjust: none;
+          font-language-override: normal;
+          font-kerning: auto;
+          font-feature-settings: normal;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          text-align: center;
+          font-size: 12px;
+          color: #fff;
+          @include if-rtl {
+            content: '\f0d9';
+             
+          }
+          }
+      a{
+            position: relative;
+            color: #fff;
+            padding-#{$left}: 5px;
+        }
+        &:hover{
+          padding-#{$left}: 5px;
+          &:before{
+              color: $linkColor;
+          }
+          a{
+            color: $linkColor;
+          } 
+        }
+    }
+    .block-content{
+      padding-top: 25px;
+    }
+    .footer-contact-content{
+          width: 100%;
+          padding-top: 40px;
+          @media (min-width:992px){
+            padding: 25px 0 0 13px;
+          }
+          p{
+            &.address{
+              line-height: 24px;
+              padding-top: 5px;
+            }
+              display: inline-flex;
+            width: 100%;
+            margin-bottom: 6px;
+            >i{
+                color: #fff;
+                margin-#{$right}: 15px;
+                margin-top: 4px;
+                &.fa-map-marker{
+                  font-size: 15px;
+                }
+                &.fa-mobile{
+                  font-size: 16px;
+                }
+            }
+            a{
+                &:hover{
+                  color: $linkColor;
+                  text-decoration:  underline;
+                }
+            }
+          }
+          .phone{
+            padding-top: 3px;
+          }
+          .email{
+            margin-bottom: 16px;
+            a{
+              color: #fff;
+              &:hover{
+                color: $linkColor;
+              }
+            }
+          }
+      }
+    .custom-about{
+      .inner{
+        position: relative;
+        z-index: 1;
+        padding: 0 25px 18px 20px;
+        display: inline-block;
+        background: rgba($background, .5);
+        .footer-title{
+          padding-top: 35px;
+          &:after{
+            bottom: -16px;
+          }
+        }
+      }
+    } 
+  }
+  .block-newleter{
+    margin-top: 38px;
+  }
+  .footer-bottom {
+    background: rgba(68,68,68,0.6);
+    .apps{
+      float: $right;
+      .footer-title{
+        text-align: $right;
+        width: 100%;
+      }
+    }
+    .footer-title{
+      text-transform: capitalize;
+      font-weight: bold;
+      padding: 17px 0 18px;
+      font-size: 16px;
+      &:after{
+        display: none;
+      }
+    }
+    .module{
+      margin-bottom: 25px;
+    }
+    .socials-wrap{
+      ul{
+        padding: 0;
+        margin: 0;
+        li{
+          display: inline-block;
+          margin-#{$right}: 5px;
+          .name-social{
+            display: none;
+          }
+          .icon-social {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            @include transition(all 0.3s ease-in-out);
+            &:hover{
+              background: $background1;
+            }
+          }
+        }
+      } 
+    }
+    .copyright-text{
+      text-align: center;
+    }
+  }
+  
+  /*FOOTER V2*/
+  &.footer{
+    .so-spotlight6.block-newleter {
+      margin-top: 30px; 
+      background: #ddd;
+    }
+  }
+}

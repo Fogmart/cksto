@@ -1,0 +1,14 @@
+.idea/
+cgi-bin/
+csv/
+image/
+import/
+system/
+vqmod/
+.htaccess
+config.php
+default_customdetails.php
+index.php
+php.ini
+robots.txt
+zoxml2.php

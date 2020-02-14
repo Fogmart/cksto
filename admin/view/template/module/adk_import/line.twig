@@ -1,0 +1,39 @@
+<div class="panel panel-default adk-filter-line" data-type="{{ item_type }}" data-item="{{ id }}">
+	<div class="panel-heading" role="tab" id="{{ id }}-pane" style="padding-bottom: 15px;">
+	  <h4 class="panel-title" style="overflow: hidden;">
+		<a role="button" data-toggle="collapse" data-parent="#accordion-{{ item_type }}" href="#{{ id }}-collapse-{{ item_type }}" style="width: 150px; display: inline-block;">
+		  {{ name }}
+		</a>
+		{{ status }} {{ add_button }}
+	  </h4>
+	</div>
+	<div id="{{ id }}-collapse-{{ item_type }}" class="panel-collapse collapse" role="tabpanel">
+	  <div class="panel-body">
+		  <div class="row">
+			<div class="col-sm-2">
+			</div>
+		  </div>
+		<div class="row row-template adk-filter-item" style="display: none">
+		{{ filter }}
+		</div>
+		{# {% if filter %}
+		<div class="row">
+			<div class="col-sm-2 col-sm-offset-10">
+			</div>
+		</div>
+		{% endif %} #}
+		{{ input_filters }}
+
+		{% if columns %}
+		<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ item_type }}-{{ id }}-columns">
+			{{ __( 'Columns' ) }}
+		</button>
+		<div class="collapse" id="{{ item_type }}-{{ id }}-columns">
+			<div class="well adk-columns-wrapper">
+				{{ columns }}
+			</div>
+		</div>
+		{% endif %}
+	  </div>
+	</div>
+</div>

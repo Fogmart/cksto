@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ __( 'File browser' ) }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2" />
+
+		<link rel="stylesheet" type="text/css" href="view/stylesheet/advertikon/jquery-ui.min.css">
+		<link rel="stylesheet" type="text/css" href="view/stylesheet/advertikon/jquery-ui.theme.min.css">
+		<link rel="stylesheet" type="text/css" href="view/stylesheet/advertikon/elfinder/css/elfinder.min.css">
+		<link rel="stylesheet" type="text/css" href="view/stylesheet/advertikon/elfinder/css/theme.css">
+
+		<script src="view/javascript/jquery/jquery-2.1.1.min.js"></script>
+		<script src="{{ jquery_js }}"></script>
+		<script src="view/javascript/advertikon/elfinder/js/elfinder.full.js"></script>
+
+		<script type="text/javascript" charset="utf-8">
+		(function s( $ ) {
+
+			var i18nPath = 'js/i18n',
+				start = function( lng ) {
+					$().ready( function() {
+						var elf = $( '#elfinder' ).elfinder( {
+							lang : lng,
+							url  : "{{ connector_url }}",
+							commands : [
+								// 'custom',
+								'open',
+								'reload',
+								'home',
+								'up',
+								'back',
+								'forward',
+								'getfile',
+								'quicklook', 
+								'download',
+								'rm',
+								'duplicate',
+								'rename',
+								'mkdir',
+								'mkfile',
+								'upload',
+								'copy', 
+								'cut',
+								'paste',
+								'edit',
+								'extract',
+								'archive',
+								'search',
+								'info',
+								'view',
+								'resize',
+								'sort',
+								'chmod'
+							],
+							contextmenu : {
+								navbar : ['open', '|', 'copy', '|', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'info'],
+								cwd    : ['reload', 'back', '|', 'upload', 'mkdir', 'mkfile', 'paste', '|', 'sort', '|', 'info'],
+								files  : ['getfile', '|', 'custom', 'quicklook', '|', 'download', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|', 'info', 'chmod']
+							},
+							handlers: {
+								dblclick: function(e){
+									var fileData = elf.file( e.data.file );
+
+									if( fileData.mime !== "directory" ) {
+										fileData.buttonId = window.frameElement.button_id;
+										fileData.path = elf.path( fileData.phash );
+										fileData.type = "file";
+
+										window.parent.postMessage( fileData, "*" );
+
+										return false;
+									}
+								}
+							}
+						} ).elfinder( 'instance' );
+					} );
+				},
+				loct = window.location.search,
+				full_lng, locm, lng;
+
+			// detect language
+			if ( loct && ( locm = loct.match( /lang=([a-zA-Z_-]+)/ ) ) ) {
+				full_lng = locm[ 1 ];
+			} else {
+				full_lng = ( navigator.browserLanguage || navigator.language || navigator.userLanguage );
+			}
+
+			lng = full_lng.substr( 0, 2 );
+
+			if ( lng === 'ja' ) {
+				lng = 'jp';
+			} else if ( lng === 'pt' ) {
+				lng = 'pt_BR';
+			} else if ( lng === 'zh' ) {
+				lng = ( full_lng.substr( 0, 5 ) == 'zh-tw' )? 'zh_TW' : 'zh_CN';
+			}
+
+			if ( lng != 'en' ) {
+				$.ajax( {
+					url:      i18nPath+'/elfinder.'+lng+'.js',
+					cache:    true,
+					dataType: 'script'
+				} )
+				.done(function() {
+					start( lng );
+				} )
+				.fail(function() {
+					start( 'en' );
+				} );
+			} else {
+				start( lng );
+			}
+		} )( jQuery );
+		</script>
+	</head>
+	<body>
+		<div id="elfinder"></div>
+	</body>
+</html>

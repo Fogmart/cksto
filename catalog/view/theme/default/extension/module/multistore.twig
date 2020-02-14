@@ -1,0 +1,6 @@
+{% if multistore %}
+<p style="font-weight: bold;">{{ text_multistore }}</p>
+	<ul class="list-unstyled">{% for store in multistore %}
+		<li>{{ store.name }}</li>
+	{% endfor %}</ul>
+{% endif %}

@@ -1,0 +1,374 @@
+/* Page Styles */
+
+.ui-dialog.ui-widget.ui-front {
+	/*	this is minimum due to 3-rd parties	*/
+	z-index: 10021;
+}
+
+#filemanager.modal-dialog {
+	width: 940px;
+}
+
+#filemanager .modal-content {
+	padding: 0 20px 0 20px;
+}
+
+#filemanager .modal-body {
+	padding-top: 0;
+}
+
+#filemanager .modal-header {
+	padding-bottom: 10px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#filemanager .modal-header .close {
+	margin-top: 0;
+}
+
+#smkfm-dialog {
+	display: none;
+	z-index: 10022;
+}
+
+#smkfm-dialog * {
+	/*	this is minimum due to 3-rd parties	*/
+	z-index: 10023;
+}
+
+#files-menu {
+	position: relative;
+	height: 33px;
+	clear: both;
+	background-color: #4A4A4A;
+	background-image: linear-gradient(to bottom, #4A4A4A, #333);
+	border-bottom: 1px solid #333;
+	border-radius: 3px 3px 0px 0px;
+	padding-left: 10px;
+}
+
+#files-menu a {
+	color: #fff;
+	padding-left: 20px;
+	/*padding-left: 27px;
+	margin-right: 10px;*/
+}
+
+#smkfm-column-left {
+	float: left;
+	width: 25%;
+	height: 367px;
+	margin-bottom: 9px;
+	padding-top: 5px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-top: none;
+	border-radius: 0px 0px 0px 3px;
+	overflow: auto;
+}
+
+#smkfm-column-right {
+	float: right;
+	width: 73%;
+	height: 400px;
+	background: #fff;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+	border: 1px solid #CCC;
+	border-top: none;
+	border-radius: 0px 0px 3px 0px;
+	overflow: auto;
+}
+
+#smkfm-column-right > div {
+	padding: 5px;
+	margin-bottom: 55px;
+	text-align: left;
+}
+
+#smkfm-column-right > div:after {
+	display: block;
+	content: "";
+	clear: both;
+	float: none;
+}
+
+/*	.smkfm-file	*/
+#smkfm-column-right a {
+	display: inline-block;
+	margin: 0.5%;
+	padding: 5px;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #EEE;
+	cursor: pointer;
+}
+
+#smkfm-column-right a.smkfm-selected {
+	background: #EBF4FD;
+	border: 1px solid #7DA2CE;
+	outline: 1px solid #7DA2CE;
+}
+
+#smkfm-column-right input {
+	display: none;
+}
+
+/* Buttons */
+.filemanager-button {
+	display: block;
+	height: 33px;
+	float: left;
+	padding: 0 10px 0 0;
+	/*margin-right: 5px;*/
+	line-height: 280%;
+	background-color: #4A4A4A;
+	background-image: linear-gradient(to bottom, #4A4A4A, #333);
+	text-decoration: none;
+	text-align: left;
+	cursor: pointer;
+}
+
+#smkfm-button-create > i {
+	background-image: url('../image/filemanager/create.png');
+}
+
+#smkfm-button-delete > i {
+	background-image: url('../image/filemanager/edit-delete.png');
+}
+
+#smkfm-button-move > i {
+	background-image: url('../image/filemanager/edit-cut.png');
+}
+
+#smkfm-button-copy > i {
+	background-image: url('../image/filemanager/edit-copy.png');
+}
+
+#smkfm-button-rename > i {
+	background-image: url('../image/filemanager/edit-rename.png');
+}
+
+#smkfm-button-upload > i {
+	background-image: url('../image/filemanager/upload.png');
+}
+
+#smkfm-button-uploadmulti > i {
+	background-image: url('../image/filemanager/uploadmulti.png');
+}
+
+#smkfm-button-refresh > i {
+	background-image: url('../image/filemanager/refresh.png');
+}
+
+.filemanager-button > i {
+	display: inline-block;
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin: 8px 5px 0 -15px;
+	background-repeat: no-repeat;
+}
+
+#filemanager .filemanager-button:hover,
+#filemanager .filemanager-button:active
+{
+	background-color: #222;
+	background-image: linear-gradient(to bottom, #333, #111);
+	border-radius: 3px;
+}
+
+/* Images */
+.thumb {
+	padding: 5px;
+	width: 105px;
+	height: 105px;
+	background: #F7F7F7;
+	border: 1px solid #CCC;
+	cursor: pointer;
+	cursor: move;
+	position: relative;
+}
+
+#updateImage a {
+	width: 130px;
+	height: 16px;
+	color: #FBFBFB;
+	text-align: center;
+	line-height: 16px;
+	font-size: 115%;
+	font-weight: bold;
+	margin: auto;
+	margin-top: 3px;
+	padding: 5px;
+	border: 1px solid #DDD;
+	background: #5C9CCC;
+	background-position: 0px -50px;
+}
+
+#updateImage a:hover {
+	background-position: 0px 0px;
+	background-color: #EEE;
+}
+
+/* Filter */
+.filter {
+	position: relative;
+	clear: left;
+	float: left;
+    width: 25%;
+	background-color: #FFF;
+    border: 1px solid #CCC;
+	margin: 0px 0px 15px 0px;
+}
+
+.filter > input {
+	height: 20px;
+	width: 80%;
+	padding-left: 2px;
+	margin: 0;
+	box-shadow: none;
+	border: none;
+}
+
+.filter > input:focus {
+	margin: 0;
+	outline: 0;
+}
+
+.filter > img {
+	position: relative;
+	float: right;
+	margin-right: 2px;
+	line-height: 20px;
+}
+
+/* Tools */
+#smkfm-toolset {
+	clear: both;
+}
+
+#smkfm-toolset .btn {
+	float: left;
+	font-size: 10px;
+	margin: 6px 6px 6px 0;
+}
+
+/*	file item	*/
+.smkfm-file {
+	display: none;
+	float: left;
+	width: 24%;
+	max-width: 150px;
+}
+
+.smkfm-file img {
+	width: 100%;
+}
+
+.smkfm-file-name {
+	display: block;
+	width: 100%;
+	height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/*hyphens: auto;
+	-ms-hyphens: auto;*/
+	word-break: break-all;
+	font-size: 13px;
+}
+
+.smkfm-file-size {
+	display: block;
+	width: 100%;
+	clear: both;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-break: break-all;
+	font-size: 13px;
+	color: #555;
+}
+
+/*	Text View Mode	*/
+
+#smkfm-column-right.smk-text-view .smkfm-file img,
+#smkfm-column-right.smk-text-view .smkfm-file-size
+{
+	display: none;
+}
+
+#smkfm-column-right.smk-text-view .smkfm-file-name {
+	/*	two rows	*/
+	height: 40px;
+	text-align: left;
+}
+
+/*	List View Mode	*/
+
+#smkfm-column-right.smk-list-view .smkfm-file img {
+	width: 25%;
+	float: left;
+}
+
+#smkfm-column-right.smk-list-view .smkfm-file > div {
+	float: left;
+	width: 75%;
+}
+
+#smkfm-column-right.smk-list-view .smkfm-file > div:after {
+	display: block;
+	content: "";
+	clear: both;
+	float: none;
+}
+
+.smkfm-feedback {
+	color: #1571B0;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 30px 0px 0px 50px;
+}
+
+.smkfm-copyright {
+	display: block;
+	float: right;
+	padding: 5px 10px 0px 0px;
+	font-size: 12px;
+	color: #269BC6;
+}
+
+.smkfm-copyright a {
+	text-decoration: none;
+}
+
+.smkfm-copyright a:hover,
+.smkfm-copyright a:active {
+	text-decoration: underline;
+}
+
+#smkfm-preview {
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+#modal-image #smkfm-preview {
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 5px;
+}
+
+#smkfm-preview .holder {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#smkfm-preview iframe,
+#smkfm-preview img
+{
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}

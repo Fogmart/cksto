@@ -1,0 +1,176 @@
+{{ header }}
+{{ column_left }}
+<div id="content" class="full-height">
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="pull-right">
+
+				<a href="{{ cancel }}" data-toggle="tooltip" title="{{ __( 'Back to modules' ) }}" class="btn btn-default" >
+					<i class="fa fa-reply"></i>
+				</a>
+				{{ update_button }}
+			</div>
+			<h1>{{ name }}</h1>
+			<ul class="breadcrumb">
+				{% for breadcrumb in breadcrumbs %}
+				<li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="container-fluid">
+
+		{% if error_warning %}
+			{% for warning in error_warning %}
+			<div class="alert alert-danger alert-dismissible" role="alert">
+				<i class="fa fa-exclamation-circle"></i> {{ warning }}
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+			{% endfor %}
+		{% endif %}
+			
+		{{ compatibility }}
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fab fa fa-tachometer fa-2x"></i> {{ __( 'Settings' ) }}</h3>
+			</div>
+
+			<div class="panel-body main-panel-body">
+
+					<ul class="nav nav-tabs">
+						<li class="active sway-able">
+							<a href="#tab-import" data-toggle="tab">
+								<i class="fa fa-download fa-2x tab-icon"> </i>
+								{{ __( 'To Excel' ) }}
+							</a>
+						</li>
+						<li class="sway-able">
+							<a href="#tab-export" data-toggle="tab">
+								<i class="fa fa-upload fa-2x tab-icon"> </i>
+								{{ __( 'From Excel' ) }}
+							</a>
+						</li>
+						 <li class="sway-able">
+							<a href="#tab-backup" data-toggle="tab">
+								<i class="fa fa-save tab-icon fa-2x"> </i>
+								{{ __( 'Backup' ) }}
+							</a>
+						</li>
+						<li class="sway-able">
+							<a href="#tab-export-rules" data-toggle="tab">
+								<i class="fa fa-sliders tab-icon"> </i>
+								{{ __( 'Import rules' ) }}
+							</a>
+						</li>
+						{# <li class="sway-able hidden-xs">
+							<a href="#shortcodes-list" data-toggle="tab">
+							 	<i class="fa fa-list tab-icon"> </i>
+								{{ __( 'Google disk' ) }}
+							</a>
+						</li>  #}
+						<!--  <li class="sway-able">
+							<a href="#tab-support" data-toggle="tab">
+								<i class="fa fa-life-saver tab-icon"> </i>
+								{{ __( 'Support' ) }}
+							</a>
+						</li> -->
+					</ul>
+				
+					<div class="tab-content">
+
+						<div class="tab-pane active extension-tab form-horizontal" id="tab-import">
+							<div class="wrapper-with-wait-screen">
+								{{ importers }}
+								<div class="row">
+									<div class="col-sm-2 col-sm-offset-10">
+									{{ import_button }}
+									</div>
+								</div>
+								{{ store_filter }}
+								{{ language_filter }}
+								{{ save_to_button }}
+								{{ import_mode }}
+								{{ excel_version }}
+                                {{ import_rows }}
+								{#{{ simple_mode }}#}
+								
+								<form id="fetch-file" action="{{ fetch_file_url }}" target="import-frame" style="display: none;">
+									<input id="fetch-import-file" name="file_name">
+									{% for n, v in query %}
+										<input name="{{ n }}" value="{{ v }}">
+									{%endfor %}
+								</form>
+								
+								<iframe name="import-frame" id="i-frame" style="display: none;" src="{{ iframe_preload_url }}"></iframe>
+									
+								<div class="wait-screen">
+									<div class="spinner-holder">
+										<i class="wait-spinner fa fa-spinner fa-pulse"></i>'
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane extension-tab" id="tab-export">
+							<div id="transaction-message"></div>
+							<div class="wrapper-with-wait-screen">
+								<form action="{{ export_url }}" method="post" enctype="multipart/form-data" id="export-form" class="form-horizontal" target="export-frame">
+									{{ exporters }}
+									{{ export_file }}
+
+									<div class="row">
+										<div class="col-sm-2 col-sm-offset-10">
+										{{ export_button }}
+										</div>
+									</div>
+								</form>
+								<iframe name="export-frame" id="e-frame" style="display: none;"></iframe>
+								
+								<div class="wait-screen">
+									<div class="spinner-holder">
+										<i class="wait-spinner fa fa-spinner fa-pulse"></i>'
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="tab-pane form-horizontal" id="tab-export-rules">
+							{{ rule_export_manufacturer }}
+							{{ rule_export_stock_status }}
+							{{ rule_export_tax_class }}
+							{{ rule_export_weight_class }}
+							{{ rule_export_length_class }}
+							{{ rule_export_attribute }}
+							{{ rule_export_default_attribute_group }}
+							{{ rule_export_customer_group }}
+							{{ rule_export_option }}
+							{{ rule_export_category }}
+						</div>
+										
+						<div class="tab-pane form-horizontal" id="tab-backup">
+							{{ dump_button }}
+							{{ restore_button }}
+							<form id="dump-file-form" action="{{ restore_url }}" method="post" enctype="multipart/form-data" class="form-horizontal" target="export-frame">
+								{{ dump_list }}
+								{{ dump_file }}
+							</form>
+						</div>
+
+<!--  ********************************** Tab Support Start ************************************* -->
+						{{ support }}
+<!-- *********************************** Tab Support End *************************************** -->
+					</div><!-- .tab-content -->
+
+			</div><!-- .panel-body -->
+		</div><!--.panel .panel-default -->
+	</div><!-- .container-fluid -->
+	<div class="legal">
+		<span>Adverti<b>k</b>on</span> &#169; 2015-{{ date( 'Y' ) }} All Rights Reserved.<br>Version {{ version }}
+	</div>
+</div><!-- #content -->
+<div id="status-window" class="adk-status-window">{{ status }}</div>
+<script>
+ADK.locale={{ locale }};
+</script>
+{{ footer }}

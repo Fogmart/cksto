@@ -1,0 +1,63 @@
+/*===============================================
+	[SASS DIRECTORY ]
+	
+    [1] BLOCK HEADER
+    [2] BLOCK FOOTER
+	
+==============================================*/
+
+#content{margin-bottom: 30px;}
+.layout-2{
+  .full-breadcrumb{min-height: 300px;}
+  @media (min-width: 1200px) {
+    .product-view .content-product-right .countdown_box .countdown_inner{width: 85%;}
+  } 
+} 
+.common-home{
+  .so-spotlight1{
+    margin-top: -50px;
+    .sohomepage-slider .so-homeslider{border: none;}
+  }
+
+  .megamenu-style-dev .navbar-default .horizontal .megamenu-wrapper ul.megamenu > li.home a {
+    background: $background;
+    color: #fff;
+  }
+  .so-spotlight6{background:#fff;}
+  ol, ul {
+    list-style: none;
+    padding: 0;
+  } 
+  .header-title,
+  .title-home{
+    text-align: center;
+    h3,
+    h2{
+        padding: 6px 0;
+        font-size: 20px;
+        color: #444;
+        text-transform: uppercase;
+        border-top: 1px solid #444;
+        border-bottom: 1px solid #444;
+        display: inline-block;
+        font-weight: normal;
+        margin: 0;
+        strong { color: $linkColor;}
+    }
+  } 
+  .no-padding { padding: 0 !important;}
+  .module.no-margin{margin: 0;}
+  #content {
+    margin-bottom: 0;
+    margin-top: -100px;
+    position: relative;
+    z-index: 2;
+  }
+
+} 
+
+.media-date-added{display: none;}
+.commingsoon-messenger{ margin:10em 0 10em;}
+.block-upsell-home2{
+  .so-extraslider{position: relative;}
+}

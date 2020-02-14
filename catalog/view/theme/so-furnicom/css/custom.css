@@ -1,0 +1,5 @@
+/*Add Css Custom Here*/
+
+.spoiler-title{cursor:pointer;float: right;padding: 0 10%;}
+.spoiler-body{display:none;background:#f1f1f1;}
+

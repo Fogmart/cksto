@@ -1,0 +1,140 @@
+
+@include breakpoint(xxxs){
+ 	/* ************************************************************************************************
+      	BLOCK HEADER  
+  	************************************************************************************************ */
+  	/*[T] Header 1 [T]*/
+  	header.typeheader-1{
+  		.header-box .block-header .header-garenal .inner-full .inner-2 .box-lang-cur .currencies-block a.btn-link,
+  		.header-box .block-header .header-garenal .inner-full .inner-2 .box-lang-cur .languages-block a.btn-link{max-width: 70px;}
+  		.header-box .block-header .header-navigation{padding: 0 0 20px;}
+		.header-box .block-header .header-garenal .inner-full .inner-2{
+		    float: none;
+		    .box-lang-cur{width: 40%!important;}
+		    .box-search{width: 60%!important; float: $right!important;
+		      	#sosearchpro.search-pro{
+		        	width: 100%!important;
+		        	.input-group{ display: block; padding-#{$right}: 4px; }
+		      	} 
+		    }
+		}
+	}
+
+	
+	
+
+	/*************************************************************************************************
+	    PAGE HOME 
+	************************************************************************************************ */
+	/*[T] Layout 1 [T]*/
+	.layout-1{
+		.block-img .img-1{width: 100%;margin-top: 10px;float: none;}
+		.module.sohomepage-slider.slideshow-v1 .owl2-carousel .owl2-dots{ display: none!important; }
+		.block-newleter .footer-newsletter .input-control .send-mail{ padding: 0 5px;}
+		.so-listing-tabs .ltabs-tabs-container .ltabs-tabs-wrap.ltabs-selectbox .ltabs-tabs{
+		   	border-radius: 0;
+		    border-bottom: none;
+		    li.ltabs-tab > span {
+		      font-size: 12px;
+		      font-weight: 600;
+		      line-height: 25px;
+		      padding-#{$left}: 20px;
+		      &:before{
+		        display: none;
+		      }
+		    }
+		}
+		.so-deals-category .deals-cat-items-container .deal-cat-items .deal-cat-item .caption {padding-#{$left}: 20px;}
+		.shopping_cart .shoppingcart-box{min-width: 290px;top: 120px; &:after {#{$left}: 91%;}}
+	  	.latest-blog-home1 .last-post .cat-wrap.cat-wrap-1{width: 100%!important;}
+	  	.latest-blog-home1 .last-post .cat-wrap.cat-wrap-2{width: 100%!important;}
+	  	.cat-wrap{ margin-top: 20px; }
+	  	.latest-blog-home1 .last-post .cat-wrap.cat-wrap-3{
+		    width: 100%!important;
+		    .media-lefts,
+		    .media-bodys{width: 100%;}
+		}
+	  	.block-deals .so-deals-category .product-thumb .image span.label-sale{ display: none; }
+		.block-deals .so-deals-category .owl2-controls{ top: 29px;  #{$right}: 10px; }
+	  	.footer-bottom .apps .footer-title{ text-align: $left; }
+	  	.footer-bottom .apps{ float: $left; }
+	  	.module.block-listingtab .so-listing-tabs .ltabs-tabs-container .ltabs-tabs li{float: none;border-bottom: 1px solid #ddd;margin: 0;}
+	  	.module.block-listingtab .so-listing-tabs .ltabs-wrap .ltabs-tabs-container{margin: 15px 0 0;}
+	  	.module.block-listingtab .wap-listing-tabs{margin: 0;}
+	  	.module.block-listingtab .so-listing-tabs .owl2-controls{top: -24px;}
+	  	.block-listingtab .so-listing-tabs .ltabs-tabs-container .ltabs-tabs li.ltabs-tab > span{text-transform: capitalize;font-weight: normal!important;}
+	  	.footer-center .block-ip{
+	    	float: none;
+		    width: 100% !important;
+	    }
+	    .so-deals-category .so-deals-cat-wrap .wap-deals-cat,
+	    .so-deals-category .deals-cat-items-container .deal-cat-items .deal-cat-item .image{width: 100%;}
+	    .deal-cat-items-inner .box-label{display: none;}
+	    .footer-bottom .block-ip{
+		    float: none;
+		    width: 100% !important;
+		} 
+	}
+
+	/*[T] Layout 1 [T]*/
+	.layout-2{
+		.block-img .img-1{
+			float: none;
+			width: 100%;
+			margin-top: 30px;
+		}
+		.so-deals-category .owl2-controls{margin: 0;}
+		.module.block-sevicer .content-box .banner-info img{width: 80px;}
+		.module.block-sevicer .content-box .banner-info .banner-cont{margin-top: 15px;}
+		.so-latest-blog.latest-blog-home2 .cat-wrap{width: 100%!important}
+		.slider-container-full .owl2-controls{display: none;}		
+		.brands-tab .tab-content,
+		.brands-tab ul.nav-brand-tabs{width: 100%;float: none;}
+		.brands-tab ul.nav-brand-tabs li{text-align: center;}
+		.brands-tab .brands-title{
+			padding: 41px 0 40px!important;
+			h2{font-size: 25px;}
+		}
+
+	}
+	#sosearchpro ul.dropdown-menu{ #{$right}:5px; .price .price-new, .price span.price {font-size: 12px;}}
+	/*************************************************************************************************
+       LISTING PAGE
+    ************************************************************************************************ */
+    .product-view .content-product-right .countdown_box .countdown_inner .title{ display: none; }
+    .product-view .content-product-right .box-info-product .add-to-links { margin-top: 10px; }
+    .producttab .tabsslider .nav-tabs li{float: none;}
+    .product-filter-bottom .box-pagination{text-align: center;}
+    .product-view .content-product-right .box-info-product .cart{float: none;margin: 0;}
+    .product-view .content-product-right .box-info-product .add-to-links {  display: block; padding-#{$left}: 38px;	}
+	.deals_module_wrapper .extended_offer .price-save,
+	.deals_module_wrapper .extended_offer .price-sale, 
+	.deals_module_wrapper .extended_offer .price-old{margin: 1px; display: block;text-align: center;}
+	.short-by-show .form-group.short-by{float: none;margin: 0;}
+	.product-filter .short-by-show .control-label{display: table-cell;}
+	.product-filter .product-compare{margin: 0; text-align: $left;}
+	.products-category .products-list.grid .product-layout{width: 100%!important}
+
+    /*************************************************************************************************
+       FOOTER PAGE
+    ************************************************************************************************ */
+    /*[T] Footer V2 [T]*/
+    footer.typefooter-2{
+    	.footer-bottom .apps{float: $left;}
+    	.footer-bottom .apps .footer-title{text-align: $left}
+    }
+
+    /*************************************************************************************************
+       BONUS PAGE
+    ************************************************************************************************ */
+	.media-box-link--figure {  width: 100%;  display: block; }
+	.media-box-link--content {  padding: 10px; width: 100%;  display: block; text-align: center;}
+	.media-box-link--arrow {
+	    width: 100%;
+	    vertical-align: middle;
+	    display: block;
+	    text-align: center;
+	    padding: 10px 0;
+	    border-top: 1px solid #fff;
+	}
+}
